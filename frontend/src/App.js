@@ -59,7 +59,7 @@ const App = () => {
             component={HomeScreen}
             exact
           />
-          <Route path='/' component={LoginScreen} exact />
+          <Route path='/' component={HomeScreen} exact />
         </Container>
       </main>
       <Footer />
