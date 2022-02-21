@@ -14,7 +14,7 @@ import cors  from "cors";
 
 
 const corsOptions = {
-  origin: '*',
+  origin: ['http://www.digiphynft.com'],
   credentials: true,            //access-control-allow-credentials:true
   optionSuccessStatus: 200,
 }
