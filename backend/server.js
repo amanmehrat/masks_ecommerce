@@ -10,22 +10,14 @@ import productRoutes from './routes/productRoutes.js'
 import userRoutes from './routes/userRoutes.js'
 import orderRoutes from './routes/orderRoutes.js'
 import uploadRoutes from './routes/uploadRoutes.js'
-var cors = require ('cors');
+import cors  from "cors";
 
 
-app.use(cors({
-    origin: *,
-    credentials:true
-}));
-
-// app.use(function (req, res, next) {
-
-//   res.header('Access-Control-Allow-Origin', "http://www.digiphynft.com");
-//   res.header('Access-Control-Allow-Headers', true);
-//   res.header('Access-Control-Allow-Credentials', true);
-//   res.header('Access-Control-Allow-Methods', 'GET, POST, OPTIONS, PUT, PATCH, DELETE');
-//   next();
-// });
+const corsOptions = {
+  origin: '*',
+  credentials: true,            //access-control-allow-credentials:true
+  optionSuccessStatus: 200,
+}
 
 dotenv.config()
 
@@ -37,6 +29,7 @@ if (process.env.NODE_ENV === 'development') {
   app.use(morgan('dev'))
 }
 
+app.use(cors(corsOptions)) // Use this after the variable declaration
 app.use(express.json())
 
 app.use('/api/products', productRoutes)
