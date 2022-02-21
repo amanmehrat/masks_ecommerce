@@ -13,6 +13,7 @@ import uploadRoutes from './routes/uploadRoutes.js'
 var cors = require ('cors');
 
 app.use(cors());
+
 // app.use(cors({
 //     origin: ['http://www.digiphynft.com'],
 //     credentials:true
