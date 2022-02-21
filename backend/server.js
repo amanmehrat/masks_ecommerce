@@ -11,19 +11,21 @@ import userRoutes from './routes/userRoutes.js'
 import orderRoutes from './routes/orderRoutes.js'
 import uploadRoutes from './routes/uploadRoutes.js'
 var cors = require ('cors');
-app.use(cors({
-    origin: ['http://www.digiphynft.com'],
-    credentials:true
-}));
 
-app.use(function (req, res, next) {
+app.use(cors());
+// app.use(cors({
+//     origin: ['http://www.digiphynft.com'],
+//     credentials:true
+// }));
 
-  res.header('Access-Control-Allow-Origin', "http://www.digiphynft.com");
-  res.header('Access-Control-Allow-Headers', true);
-  res.header('Access-Control-Allow-Credentials', true);
-  res.header('Access-Control-Allow-Methods', 'GET, POST, OPTIONS, PUT, PATCH, DELETE');
-  next();
-});
+// app.use(function (req, res, next) {
+
+//   res.header('Access-Control-Allow-Origin', "http://www.digiphynft.com");
+//   res.header('Access-Control-Allow-Headers', true);
+//   res.header('Access-Control-Allow-Credentials', true);
+//   res.header('Access-Control-Allow-Methods', 'GET, POST, OPTIONS, PUT, PATCH, DELETE');
+//   next();
+// });
 
 dotenv.config()
 
